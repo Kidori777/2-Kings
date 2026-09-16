@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>열왕기하 — 무너지는 왕권, 꺼지지 않는 언약</title>
+<meta property="og:title" content="열왕기하 — 무너지는 왕권, 꺼지지 않는 언약">
+<meta property="og:description" content="열왕기하 전권을 다섯 편으로 엮은 성경공부 시리즈. 왕권의 몰락과 하나님의 신실하심을 따라간다.">
+<meta name="description" content="열왕기하 전권을 다섯 편으로 엮은 성경공부 시리즈. 왕권의 몰락과 하나님의 신실하심을 따라간다.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;700;900&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #1B1A2E;
+    --bg-deep: #14132399;
+    --surface: #24223F;
+    --surface-line: #3A3760;
+    --gold: #C9A24B;
+    --gold-soft: #E4C978;
+    --crimson: #8C3A44;
+    --text: #EFEBDD;
+    --text-muted: #A9A4C2;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background: var(--bg);
+    color: var(--text);
+    font-family:'Noto Sans KR', sans-serif;
+    font-weight:300;
+    line-height:1.75;
+    overflow-x:hidden;
+  }
+  ::selection{background:var(--gold); color:#1B1A2E;}
+
+  /* backdrop */
+  #bg-canvas{position:fixed; inset:0; z-index:-1; opacity:0.35;}
+
+  header{
+    position:relative;
+    max-width:760px;
+    margin:0 auto;
+    padding:min(18vh,140px) 28px 90px;
+    text-align:center;
+  }
+  .kicker{
+    font-family:'Noto Sans KR', sans-serif;
+    font-size:0.82rem;
+    letter-spacing:0.16em;
+    color:var(--gold-soft);
+    margin-bottom:22px;
+  }
+  h1{
+    font-family:'Noto Serif KR', serif;
+    font-weight:900;
+    font-size: clamp(2.6rem, 7vw, 4.6rem);
+    letter-spacing:-0.01em;
+    color:var(--text);
+    margin-bottom:26px;
+  }
+  header p{
+    font-family:'Noto Serif KR', serif;
+    font-weight:400;
+    font-size:1.08rem;
+    color:var(--text-muted);
+    max-width:520px;
+    margin:0 auto;
+  }
+
+  main{max-width:760px; margin:0 auto; padding:0 28px 160px; position:relative;}
+
+  .spine{
+    position:absolute;
+    left:50%;
+    top:0;
+    bottom:120px;
+    width:1px;
+    background:linear-gradient(to bottom, transparent, var(--surface-line) 6%, var(--surface-line) 94%, transparent);
+    transform:translateX(-50%);
+  }
+
+  .episode{
+    position:relative;
+    display:grid;
+    grid-template-columns: 1fr;
+    padding:64px 0;
+    opacity:0;
+    transform:translateY(26px);
+    transition:opacity 0.9s ease, transform 0.9s ease;
+  }
+  .episode.visible{opacity:1; transform:translateY(0);}
+
+  .episode .range{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:11px;
+    font-family:'Noto Serif KR', serif;
+    font-size:0.92rem;
+    color:var(--episode-color, var(--gold-soft));
+    margin-bottom:20px;
+  }
+  .episode .range .dot{
+    flex:none;
+    width:10px; height:10px;
+    border-radius:50%;
+    background:var(--episode-color, var(--gold));
+    box-shadow:0 0 0 5px var(--bg), 0 0 16px 2px var(--episode-color, var(--gold));
+  }
+
+  .episode a.card{
+    display:block;
+    text-decoration:none;
+    color:inherit;
+    background:var(--surface);
+    border:1px solid var(--surface-line);
+    border-top:2px solid var(--episode-color, var(--gold));
+    border-radius:2px;
+    padding:38px 40px;
+    max-width:560px;
+    margin:0 auto;
+    transition:border-color 0.35s ease, transform 0.35s ease, background 0.35s ease;
+  }
+  .episode a.card:hover, .episode a.card:focus-visible{
+    border-color:var(--episode-color, var(--gold));
+    transform:translateY(-3px);
+    background:#282649;
+    outline:none;
+  }
+
+  .episode h2{
+    font-family:'Noto Serif KR', serif;
+    font-weight:700;
+    font-size:1.5rem;
+    color:var(--text);
+    margin-bottom:14px;
+  }
+
+  .episode .blurb{
+    font-size:0.96rem;
+    color:var(--text-muted);
+    font-weight:300;
+    margin-bottom:20px;
+  }
+
+  .episode .thread{
+    font-size:0.82rem;
+    color:var(--episode-color, var(--gold-soft));
+    font-weight:400;
+    letter-spacing:0.01em;
+    border-top:1px solid var(--surface-line);
+    padding-top:16px;
+  }
+
+  footer{
+    max-width:560px;
+    margin:0 auto;
+    padding:0 28px 100px;
+    text-align:center;
+    color:var(--text-muted);
+    font-size:0.88rem;
+    font-family:'Noto Serif KR', serif;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .episode{transition:none; opacity:1; transform:none;}
+  }
+
+  @media (max-width:640px){
+    header{padding:14vh 22px 70px;}
+    .spine{display:none;}
+    .episode{padding:44px 0;}
+    .episode a.card{padding:30px 26px;}
+  }
+</style>
+</head>
+<body>
+
+<canvas id="bg-canvas"></canvas>
+
+<header>
+  <div class="kicker">성경공부 시리즈</div>
+  <h1>열왕기하</h1>
+  <p>무너지는 왕권을 따라 흐르던 이야기는, 끝내 꺼지지 않는 언약 하나로 남는다. 다섯 편에 걸쳐 그 흐름을 따라간다.</p>
+</header>
+
+<main>
+  <div class="spine"></div>
+
+  <article class="episode" style="--episode-color:#B85C6B;">
+    <div class="range"><span class="dot"></span>1 · 1–2장</div>
+    <a class="card" href="열왕기하 1-2장 무너지는 왕권.html">
+      <h2>무너지는 왕권</h2>
+      <p class="blurb">아하시야의 추락과 죽음, 엘리야의 승천, 엘리사의 계승. 심판으로 끝나는 자리에서 하늘로 이어지는 생명이 시작된다.</p>
+      <div class="thread">추락과 심판 → 승천과 계승</div>
+    </a>
+  </article>
+
+  <article class="episode" style="--episode-color:#4FA097;">
+    <div class="range"><span class="dot"></span>2 · 3–8장</div>
+    <a class="card" href="열왕기하 3-8장 생명이 공급되는 방식.html">
+      <h2>생명이 공급되는 방식</h2>
+      <p class="blurb">모압 전쟁과 물 없는 광야, 과부의 기름과 수넴 여인의 소생, 나아만의 치유와 게하시의 탐욕, 불말과 불병거로 열린 영적 실재까지 — 다윗을 생각하신 언약의 신실함이 곳곳에서 삶을 붙든다.</p>
+      <div class="thread">결핍과 죽음의 자리 → 공급과 회복</div>
+    </a>
+  </article>
+
+  <article class="episode" style="--episode-color:#B4453A;">
+    <div class="range"><span class="dot"></span>3 · 9–17장</div>
+    <a class="card" href="열왕기하 9-17장 기름부음과 심판.html">
+      <h2>기름부음과 심판</h2>
+      <p class="blurb">예후의 기름부음과 이세벨, 아합 집안의 멸망. 흔들리는 왕들 끝에 이스라엘은 포로로 끌려가지만, 그 가운데도 하나님의 언약은 흔들리지 않는다.</p>
+      <div class="thread">기름부음과 심판 → 흔들림과 멸망 → 언약의 신실</div>
+    </a>
+  </article>
+
+  <article class="episode" style="--episode-color:#C9A24B;">
+    <div class="range"><span class="dot"></span>4 · 18–23장</div>
+    <a class="card" href="열왕기하 18-23장 신뢰에서 개혁까지.html">
+      <h2>신뢰에서 개혁까지</h2>
+      <p class="blurb">히스기야의 신뢰와 아시리아의 위협, 기도로 열린 응답과 뒤이은 교만. 므낫세의 타락을 지나 요시야의 개혁에 이르지만, 거두지 않으신 진노는 여전히 남는다.</p>
+      <div class="thread">신뢰와 응답 → 타락 → 개혁, 그러나 남은 진노</div>
+    </a>
+  </article>
+
+  <article class="episode" style="--episode-color:#7A6BB0;">
+    <div class="range"><span class="dot"></span>5 · 24–25장</div>
+    <a class="card" href="열왕기하 24-25장 지지않는 언약.html">
+      <h2>지지않는 언약</h2>
+      <p class="blurb">여호야김의 반기와 므낫세의 죄의 유산, 시드기야의 눈이 뽑히고 성전이 불탄 자리. 예루살렘은 무너졌지만, 남은 자와 여호야긴의 석방으로 이야기는 끝내 어둠에 지지 않는다.</p>
+      <div class="thread">포위와 멸망 → 남은 자 → 다시 켜지는 빛</div>
+    </a>
+  </article>
+</main>
+
+<footer>
+  왕들은 무너졌으나, 그들을 붙드신 언약은 무너지지 않았다.
+</footer>
+
+<script>
+(function(){
+  // scroll reveal
+  var episodes = document.querySelectorAll('.episode');
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          e.target.classList.add('visible');
+          io.unobserve(e.target);
+        }
+      });
+    }, {threshold:0.15});
+    episodes.forEach(function(el){ io.observe(el); });
+  } else {
+    episodes.forEach(function(el){ el.classList.add('visible'); });
+  }
+
+  // faint ember-dust backdrop, subordinate to content
+  var canvas = document.getElementById('bg-canvas');
+  var ctx = canvas.getContext('2d');
+  var w, h, particles = [];
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function resize(){
+    w = canvas.width = window.innerWidth;
+    h = canvas.height = window.innerHeight * (reduceMotion ? 1 : 2.2);
+  }
+  function makeParticles(){
+    particles = [];
+    var count = Math.min(70, Math.floor(w/22));
+    for(var i=0;i<count;i++){
+      particles.push({
+        x: Math.random()*w,
+        y: Math.random()*h,
+        r: Math.random()*1.4 + 0.3,
+        a: Math.random()*0.35 + 0.05,
+        s: Math.random()*0.15 + 0.03
+      });
+    }
+  }
+  resize();
+  makeParticles();
+  window.addEventListener('resize', function(){ resize(); makeParticles(); });
+
+  function draw(){
+    ctx.clearRect(0,0,w,h);
+    ctx.fillStyle = '#C9A24B';
+    particles.forEach(function(p){
+      ctx.globalAlpha = p.a;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI*2);
+      ctx.fill();
+      if(!reduceMotion){
+        p.y -= p.s;
+        if(p.y < -10){ p.y = h + 10; p.x = Math.random()*w; }
+      }
+    });
+    ctx.globalAlpha = 1;
+    if(!reduceMotion) requestAnimationFrame(draw);
+  }
+  draw();
+})();
+</script>
+
+</body>
+</html>
