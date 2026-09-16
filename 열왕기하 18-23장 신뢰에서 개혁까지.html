@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>열왕기하 4편 | 히스기야의 신뢰에서 요시야의 개혁까지 (18-23장)</title>
+<meta name="description" content="열왕기하 18-23장 성경공부 — 히스기야의 신뢰, 아시리아의 위협, 하나님의 개입, 므낫세의 타락, 요시야의 개혁을 통해 드러나는 하나님의 경륜.">
+<meta property="og:title" content="열왕기하 4편 | 히스기야의 신뢰에서 요시야의 개혁까지 (18-23장)">
+<meta property="og:description" content="열왕기하 18-23장 성경공부 — 사람의 신뢰와 연약함을 넘어, 하나님 자신이 사람 안에 거하시는 길을 향해 수렴되는 역사.">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg-1: 8,35,33;
+    --bg-2: 6,20,22;
+    --accent: 45,212,191;
+    --accent-soft: 45,212,191;
+    --ink: 240,244,242;
+    --ink-dim: 190,205,202;
+  }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html{ scroll-behavior:smooth; }
+  body{
+    font-family:'Noto Sans KR', sans-serif;
+    color:rgb(var(--ink));
+    background: radial-gradient(120% 140% at 50% 0%, rgba(var(--bg-1),1) 0%, rgba(var(--bg-2),1) 60%, rgba(4,8,9,1) 100%);
+    transition: background 1.4s ease;
+    overflow-x:hidden;
+    line-height:1.9;
+  }
+  #bgcanvas{
+    position:fixed; inset:0; width:100%; height:100%;
+    z-index:0; pointer-events:none; opacity:0.55;
+  }
+  .wrap{ position:relative; z-index:2; }
+
+  /* ===== HERO ===== */
+  .hero{
+    min-height:100vh;
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    text-align:center; padding:8vh 6vw; position:relative;
+  }
+  .hero .kicker{
+    font-size:0.85rem; letter-spacing:0.35em; text-transform:uppercase;
+    color:rgba(var(--accent),0.85); font-weight:500; margin-bottom:1.6rem;
+  }
+  .hero h1{
+    font-family:'Noto Serif KR', serif; font-weight:900;
+    font-size:clamp(2.1rem, 5.5vw, 4rem); line-height:1.3;
+    max-width:16ch; margin-bottom:1.4rem;
+    text-shadow: 0 0 40px rgba(var(--accent),0.25);
+  }
+  .hero .verse-ref{
+    font-family:'Noto Serif KR', serif; font-weight:500;
+    font-size:1rem; color:rgba(var(--ink-dim),0.9); margin-bottom:2.2rem;
+  }
+  .hero p.lead{
+    max-width:52ch; font-size:1.05rem; color:rgba(var(--ink-dim),0.95);
+    font-weight:300;
+  }
+  .scroll-cue{
+    position:absolute; bottom:6vh; left:50%; transform:translateX(-50%);
+    width:1px; height:56px; background:linear-gradient(rgba(var(--accent),0), rgba(var(--accent),0.9));
+    animation:cue-pulse 2.4s ease-in-out infinite;
+  }
+  @keyframes cue-pulse{ 0%,100%{opacity:0.3;} 50%{opacity:1;} }
+
+  /* ===== SECTIONS ===== */
+  section.chapter{
+    min-height:100vh;
+    display:flex; align-items:center;
+    padding:14vh 7vw;
+  }
+  .chapter-inner{
+    max-width:760px; margin:0 auto;
+    opacity:0; transform:translateY(38px);
+    transition:opacity 1s ease, transform 1s ease;
+  }
+  .chapter-inner.in-view{ opacity:1; transform:translateY(0); }
+
+  .chapter-num{
+    display:inline-block; font-family:'Noto Serif KR', serif; font-weight:700;
+    font-size:0.82rem; letter-spacing:0.3em; text-transform:uppercase;
+    color:rgb(var(--accent)); border:1px solid rgba(var(--accent),0.4);
+    padding:0.35em 0.9em; border-radius:999px; margin-bottom:1.6rem;
+  }
+  .chapter-title{
+    font-family:'Noto Serif KR', serif; font-weight:700;
+    font-size:clamp(1.5rem, 3.2vw, 2.2rem); line-height:1.45;
+    margin-bottom:1.8rem; color:rgb(var(--ink));
+  }
+  .chapter p{
+    font-size:1.02rem; color:rgba(var(--ink-dim),0.96);
+    margin-bottom:1.3rem; font-weight:300;
+  }
+  .chapter p strong{ color:rgb(var(--ink)); font-weight:500; }
+
+  blockquote{
+    position:relative;
+    font-family:'Noto Serif KR', serif; font-weight:500;
+    font-size:1.15rem; line-height:1.85; color:rgb(var(--ink));
+    padding:1.3rem 1.6rem 1.3rem 2rem;
+    margin:1.8rem 0;
+    border-left:3px solid rgb(var(--accent));
+    background:linear-gradient(90deg, rgba(var(--accent),0.09), rgba(var(--accent),0));
+    border-radius:2px;
+  }
+  blockquote .ref{
+    display:block; margin-top:0.65rem;
+    font-family:'Noto Sans KR', sans-serif; font-weight:500;
+    font-size:0.82rem; letter-spacing:0.08em;
+    color:rgba(var(--accent),0.9);
+  }
+
+  /* ===== TIMELINE STRIP ===== */
+  .flow{
+    padding:10vh 6vw; text-align:center;
+  }
+  .flow-inner{ max-width:960px; margin:0 auto; opacity:0; transform:translateY(30px); transition:opacity 1s ease, transform 1s ease; }
+  .flow-inner.in-view{ opacity:1; transform:translateY(0); }
+  .flow h2{
+    font-family:'Noto Serif KR', serif; font-weight:700; font-size:1.5rem;
+    margin-bottom:2.6rem; color:rgb(var(--ink));
+  }
+  .flow-track{
+    display:flex; flex-wrap:wrap; justify-content:center; gap:0.4rem;
+    position:relative;
+  }
+  .flow-node{
+    flex:1 1 130px; max-width:150px; padding:1.1rem 0.8rem;
+    border:1px solid rgba(255,255,255,0.12); border-radius:10px;
+    background:rgba(255,255,255,0.03);
+    font-size:0.82rem; color:rgba(var(--ink-dim),0.9);
+    transition:border-color 0.4s, background 0.4s;
+  }
+  .flow-node b{
+    display:block; font-family:'Noto Serif KR', serif; font-size:0.9rem;
+    color:rgb(var(--ink)); margin-bottom:0.3rem; font-weight:700;
+  }
+
+  /* ===== CLOSING ===== */
+  .closing{
+    min-height:100vh; display:flex; align-items:center; justify-content:center;
+    text-align:center; padding:10vh 6vw;
+  }
+  .closing-inner{ max-width:640px; opacity:0; transform:translateY(30px); transition:opacity 1.2s ease, transform 1.2s ease; }
+  .closing-inner.in-view{ opacity:1; transform:translateY(0); }
+  .closing h2{
+    font-family:'Noto Serif KR', serif; font-weight:900;
+    font-size:clamp(1.7rem, 4vw, 2.6rem); line-height:1.5; margin-bottom:1.6rem;
+  }
+  .closing p{ color:rgba(var(--ink-dim),0.95); font-weight:300; font-size:1.02rem; margin-bottom:1rem; }
+  .closing .signature{
+    margin-top:2.4rem; font-family:'Noto Serif KR', serif; font-size:0.85rem;
+    letter-spacing:0.2em; text-transform:uppercase; color:rgba(var(--accent),0.85);
+  }
+
+  footer{
+    text-align:center; padding:5vh 6vw 8vh; font-size:0.78rem;
+    color:rgba(var(--ink-dim),0.55);
+  }
+
+  @media (max-width:640px){
+    section.chapter{ padding:10vh 6vw; }
+    blockquote{ padding:1.1rem 1.2rem 1.1rem 1.4rem; }
+  }
+</style>
+</head>
+<body>
+<canvas id="bgcanvas"></canvas>
+<div class="wrap">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="kicker">열왕기하 4편 · 18장 — 23장</div>
+    <h1>히스기야의 신뢰에서<br>요시야의 개혁까지</h1>
+    <div class="verse-ref">“여호와 이스라엘의 하나님을 신뢰하였다” — 열왕기하 18:5</div>
+    <p class="lead">신뢰로 시작된 한 사람의 통치가 위협 앞에 흔들리고, 하나님의 개입으로 다시 세워지며, 다음 세대의 타락과 회복을 거쳐 — 결국 사람의 개혁으로도 다 이루지 못하는 하나님의 더 큰 경륜을 향해 열립니다.</p>
+    <div class="scroll-cue"></div>
+  </section>
+
+  <!-- 1. 히스기야의 즉위와 신뢰 -->
+  <section class="chapter" data-accent="45,212,191" data-bg1="8,35,33" data-bg2="6,20,22">
+    <div class="chapter-inner">
+      <span class="chapter-num">01 · 회복의 시작</span>
+      <h2 class="chapter-title">기울어진 시대 가운데 일으키신 한 사람</h2>
+      <p>“엘라의 아들 이스라엘 왕 호세아 제삼 년에, 아하스의 아들 유다 왕 히스기야가 다스리기 시작하였다.” (열왕기하 18:1)</p>
+      <p>이 한 구절은 단순한 왕의 즉위 기록처럼 보이지만, 하나님께서 역사 속에서 무엇을 회복하시려는지를 조용히 드러냅니다. 북이스라엘이 이미 기울어져 가는 시점에, 하나님은 남유다 가운데 한 사람을 일으키십니다. 그것은 단지 정치적 안정이 아니라, 하나님 자신을 향한 관계의 회복, 곧 그분의 경륜을 다시 드러내기 위한 시작이었습니다.</p>
+      <p>히스기야에 대하여 이어지는 말씀은 더욱 깊은 방향을 보여 줍니다.</p>
+      <blockquote>“히스기야는 자기 조상 다윗이 한 모든 것을 따라, 여호와께서 보시기에 올바른 일을 하였다.”<span class="ref">열왕기하 18:3</span></blockquote>
+      <p>그의 올바름은 단순한 도덕적 선함이 아니라, 하나님께서 원하시는 중심으로 돌아가는 것이었습니다. 그래서 그는 산당을 제거하고, 심지어 모세가 만들었던 놋 뱀까지도 부수었습니다. (열왕기하 18:4)</p>
+      <p>한때 하나님께서 사용하셨던 것도, 그것이 하나님 자신을 대신하는 우상이 되었을 때는 내려놓아야 했습니다. 이것은 하나님께서 외적인 형식이 아니라, 살아 있는 관계를 원하신다는 사실을 보여 줍니다.</p>
+      <blockquote>“히스기야는 여호와 이스라엘의 하나님을 신뢰하였다.”<span class="ref">열왕기하 18:5</span></blockquote>
+      <p>여기서 하나님의 의도는 분명해집니다. 하나님은 사람이 무엇을 이루는가보다, <strong>누구를 신뢰하는가</strong>를 보십니다. 그리고 그 신뢰 위에 “여호와께서 히스기야와 함께 계시니 그는 어디에 가든지 번영하였다.” (열왕기하 18:7) 이 번영은 세상의 기준이 아니라, 하나님과 함께하는 상태 자체가 축복임을 보여 줍니다.</p>
+    </div>
+  </section>
+
+  <!-- 2. 북이스라엘의 멸망 -->
+  <section class="chapter" data-accent="176,86,47" data-bg1="42,32,24" data-bg2="20,15,12">
+    <div class="chapter-inner">
+      <span class="chapter-num">02 · 끊어진 관계</span>
+      <h2 class="chapter-title">언약이 끊어질 때, 나라는 유지될 수 없다</h2>
+      <p>그러나 곧 역사는 다른 방향으로 흐릅니다. 북이스라엘은 멸망합니다.</p>
+      <blockquote>“이렇게 된 것은 이스라엘이 여호와 그들의 하나님의 음성을 듣지 않고… 그분의 언약을 어겼기 때문이다.”<span class="ref">열왕기하 18:12</span></blockquote>
+      <p>여기서 하나님은 한 가지 원리를 드러내십니다. 하나님과의 관계가 끊어질 때, 외적인 나라는 유지될 수 없습니다. 이것은 단지 역사적 사건이 아니라, 하나님과 사람 사이의 본질적인 관계를 보여 주는 그림입니다.</p>
+    </div>
+  </section>
+
+  <!-- 3. 아시리아의 위협과 흔들림 -->
+  <section class="chapter" data-accent="192,57,43" data-bg1="42,14,18" data-bg2="16,6,8">
+    <div class="chapter-inner">
+      <span class="chapter-num">03 · 시험</span>
+      <h2 class="chapter-title">신뢰로 시작했지만, 여전히 남아 있는 흔들림</h2>
+      <p>이제 남유다도 시험을 맞이합니다. 아시리아가 올라옵니다. 히스기야는 처음에는 두려움 가운데 성전의 금까지 벗겨 바칩니다. (열왕기하 18:15-16)</p>
+      <p>신뢰로 시작했지만, 여전히 사람 안에는 흔들림이 남아 있음을 보여 줍니다.</p>
+      <p>그리고 랍사게의 말은 단순한 전쟁의 협박이 아니라, 믿음을 무너뜨리는 소리입니다.</p>
+      <blockquote>“네가 누구를 믿고 나를 거스르는 것이냐?”<span class="ref">열왕기하 18:20</span></blockquote>
+      <p>이 질문은 시대를 넘어 반복됩니다. 하나님을 신뢰하는 삶은 언제나 보이지 않는 것 위에 서 있기 때문에, 눈에 보이는 현실이 그것을 흔들려고 합니다.</p>
+    </div>
+  </section>
+
+  <!-- 4. 침묵과 기도 -->
+  <section class="chapter" data-accent="242,183,5" data-bg1="40,30,10" data-bg2="18,13,5">
+    <div class="chapter-inner">
+      <span class="chapter-num">04 · 맡김</span>
+      <h2 class="chapter-title">침묵은 패배가 아니라, 맡기는 태도였다</h2>
+      <p>그러나 백성은 잠잠합니다. (열왕기하 18:36) 이 침묵은 패배가 아니라, 하나님께 맡기는 태도였습니다.</p>
+      <p>히스기야는 성전으로 올라가 편지를 펼쳐 놓습니다.</p>
+      <blockquote>“오, 여호와… 주님만이 땅의 모든 왕국의 하나님이십니다.”<span class="ref">열왕기하 19:15</span></blockquote>
+      <p>여기서 하나님의 경륜이 드러납니다. 하나님은 단지 유다의 하나님이 아니라, 모든 왕국 위에 계신 분이십니다. 그리고 히스기야의 기도는 단순한 구원이 아니라 목적을 담고 있습니다.</p>
+      <blockquote>“그리하여 땅의 모든 왕국이 오직 주님만 하나님이신 것을 알게 하여 주십시오.”<span class="ref">열왕기하 19:19</span></blockquote>
+      <p>하나님께서 일하시는 궁극적인 방향은 언제나 이것입니다. <strong>하나님 자신을 나타내시는 것.</strong></p>
+    </div>
+  </section>
+
+  <!-- 5. 하나님의 개입 -->
+  <section class="chapter" data-accent="255,213,79" data-bg1="58,46,4" data-bg2="24,18,2">
+    <div class="chapter-inner">
+      <span class="chapter-num">05 · 주권</span>
+      <h2 class="chapter-title">사람이 해결할 수 없는 곳에서, 하나님의 방식으로</h2>
+      <p>결국 하나님은 직접 개입하십니다.</p>
+      <blockquote>“그날 밤 여호와의 천사가… 십팔만 오천 명을 쳤다.”<span class="ref">열왕기하 19:35</span></blockquote>
+      <p>사람이 해결할 수 없는 상황에서, 하나님은 그분의 방식으로 역사하십니다. 이것은 사람의 능력이 아닌, 하나님의 주권을 드러내는 장면입니다.</p>
+    </div>
+  </section>
+
+  <!-- 6. 병과 교만 -->
+  <section class="chapter" data-accent="217,138,107" data-bg1="47,35,32" data-bg2="20,15,14">
+    <div class="chapter-inner">
+      <span class="chapter-num">06 · 연약함</span>
+      <h2 class="chapter-title">응답하시는 하나님, 그러나 여전한 사람의 연약함</h2>
+      <p>그러나 이야기는 여기서 멈추지 않습니다. 히스기야는 병들고, 눈물로 기도하며 생명을 연장받습니다. (열왕기하 20:3, 6)</p>
+      <p>하나님은 그의 기도를 들으시고 응답하십니다. 하나님은 살아 계신 분이며, 사람과 인격적으로 관계하시는 분이십니다.</p>
+      <p>그럼에도 불구하고, 히스기야는 바빌론 사신들에게 모든 것을 보여 줍니다. (열왕기하 20:13)</p>
+      <p>하나님께서 주신 것을 하나님께 돌리지 않고, 사람에게 보이려 할 때, 미래의 심판이 준비됩니다.</p>
+    </div>
+  </section>
+
+  <!-- 7. 므낫세의 타락 -->
+  <section class="chapter" data-accent="139,120,181" data-bg1="30,26,44" data-bg2="14,12,22">
+    <div class="chapter-inner">
+      <span class="chapter-num">07 · 타락</span>
+      <h2 class="chapter-title">더럽혀진 곳, 그러나 버림이 아닌 다루심</h2>
+      <p>이 흐름은 다음 세대로 이어집니다. 므낫세는 다시 우상을 세우고, 심지어 여호와의 집 안에 그것을 둡니다. (열왕기하 21:7)</p>
+      <p>하나님께서 “내 이름을 둘 것이다”라고 하신 곳이, 사람의 타락으로 더럽혀집니다.</p>
+      <p>결국 하나님은 말씀하십니다.</p>
+      <blockquote>“예루살렘을 닦아서 뒤집어 놓듯… 닦을 것이다.”<span class="ref">열왕기하 21:13</span></blockquote>
+      <p>이 심판조차도 파괴가 목적이 아니라, 정결케 하심을 위한 것입니다. 하나님은 버리기 위해 일하시는 분이 아니라, <strong>회복하기 위해 다루시는 분</strong>이십니다.</p>
+    </div>
+  </section>
+
+  <!-- 8. 요시야의 개혁 -->
+  <section class="chapter" data-accent="255,221,107" data-bg1="61,47,0" data-bg2="26,20,2">
+    <div class="chapter-inner">
+      <span class="chapter-num">08 · 회복</span>
+      <h2 class="chapter-title">말씀 앞에서 옷을 찢은 왕</h2>
+      <p>그 가운데 요시야가 등장합니다.</p>
+      <blockquote>“그는 여호와의 눈에 올바른 일을 하였고… 치우치지 않았다.”<span class="ref">열왕기하 22:2</span></blockquote>
+      <p>율법책이 발견되고, 왕은 옷을 찢습니다. (열왕기하 22:11) 말씀 앞에서 반응하는 이 마음이 하나님께서 찾으시는 것입니다.</p>
+      <p>그리고 그는 언약을 회복하고, 우상을 제거하며, 유월절을 회복합니다. (열왕기하 23:3, 22) 마치 처음으로 돌아가는 것처럼 보입니다.</p>
+    </div>
+  </section>
+
+  <!-- 9. 진노를 거두지 않으심 -->
+  <section class="chapter" data-accent="176,161,209" data-bg1="26,20,34" data-bg2="12,10,18">
+    <div class="chapter-inner">
+      <span class="chapter-num">09 · 한계</span>
+      <h2 class="chapter-title">가장 좋은 왕조차 다 이루지 못한 것</h2>
+      <p>그러나 마지막은 놀랍게도 이렇게 말합니다.</p>
+      <blockquote>“그렇지만 여호와는… 진노를 거두지 않으셨다.”<span class="ref">열왕기하 23:26</span></blockquote>
+      <p>이 지점에서 우리는 한 가지를 깨닫게 됩니다. 사람의 개혁, 사람의 열심, 심지어 좋은 왕조차도 하나님의 궁극적인 목적을 완전히 이루지는 못합니다.</p>
+    </div>
+  </section>
+
+  <!-- FLOW -->
+  <section class="flow" data-accent="255,233,168" data-bg1="16,22,58" data-bg2="8,10,26">
+    <div class="flow-inner">
+      <h2>하나로 수렴되는 흐름</h2>
+      <div class="flow-track">
+        <div class="flow-node"><b>신뢰</b>히스기야의 즉위</div>
+        <div class="flow-node"><b>위협</b>아시리아와 랍사게</div>
+        <div class="flow-node"><b>응답</b>기도와 하나님의 개입</div>
+        <div class="flow-node"><b>연약함</b>병듦과 교만</div>
+        <div class="flow-node"><b>타락</b>므낫세와 심판 선언</div>
+        <div class="flow-node"><b>회복</b>요시야의 개혁</div>
+        <div class="flow-node"><b>한계</b>거두지 않으신 진노</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLOSING -->
+  <section class="closing" data-accent="255,233,168" data-bg1="16,22,58" data-bg2="6,8,20">
+    <div class="closing-inner">
+      <h2>사람의 실패를 넘어,<br>하나님 자신이 생명이 되시는 길</h2>
+      <p>이 모든 흐름 — 히스기야의 신뢰, 아시리아의 위협, 기도의 응답, 인간의 연약함, 므낫세의 타락, 요시야의 회복 — 이 하나로 연결되며 우리를 한 방향으로 이끕니다.</p>
+      <p>하나님께서 원하시는 것은 단지 한 시대의 회복이 아니라, 사람 안에 하나님 자신이 자리 잡는 것입니다. 외적인 왕국이 아니라, 하나님과 사람이 하나 되는 상태입니다.</p>
+      <p>그래서 이 역사는 결국 더 큰 흐름을 향해 열립니다. 사람의 실패를 넘어, 하나님께서 직접 사람 안에 들어오셔서 그분 자신이 생명이 되시는 길. 그분의 백성 안에 거하시고, 그들을 통해 표현되시는 길.</p>
+      <p>이것이 하나님께서 역사 가운데 일하시는 궁극적인 경륜이며, 모든 왕들의 이야기와 흥망성쇠가 결국 그 한 방향으로 수렴되고 있습니다.</p>
+      <div class="signature">열왕기하 18 — 23장</div>
+    </div>
+  </section>
+
+  <footer>열왕기하 성경공부 시리즈 · 4편</footer>
+</div>
+
+<script>
+(function(){
+  // ---- 배경 색상 인터폴레이션 ----
+  var sections = Array.prototype.slice.call(document.querySelectorAll('[data-accent]'));
+  var anchors = sections.map(function(el){
+    return {
+      el: el,
+      accent: el.getAttribute('data-accent').split(',').map(Number),
+      bg1: el.getAttribute('data-bg1').split(',').map(Number),
+      bg2: el.getAttribute('data-bg2').split(',').map(Number)
+    };
+  });
+
+  function lerp(a,b,t){ return a + (b-a)*t; }
+  function lerpColor(c1,c2,t){
+    return [ Math.round(lerp(c1[0],c2[0],t)), Math.round(lerp(c1[1],c2[1],t)), Math.round(lerp(c1[2],c2[2],t)) ];
+  }
+
+  var root = document.documentElement;
+  var current = { accent:[45,212,191], bg1:[8,35,33], bg2:[6,20,22] };
+
+  function updateColors(){
+    var vh = window.innerHeight;
+    var scrollMid = window.scrollY + vh*0.5;
+
+    var idx = 0;
+    for(var i=0;i<anchors.length;i++){
+      var rect = anchors[i].el.getBoundingClientRect();
+      var top = rect.top + window.scrollY;
+      if(scrollMid >= top - vh*0.5) idx = i;
+    }
+    var a = anchors[idx];
+    var b = anchors[Math.min(idx+1, anchors.length-1)];
+
+    var rectA = a.el.getBoundingClientRect();
+    var rectB = b.el.getBoundingClientRect();
+    var topA = rectA.top + window.scrollY;
+    var topB = rectB.top + window.scrollY;
+    var t = 0;
+    if(topB !== topA){
+      t = (scrollMid - topA) / (topB - topA);
+      t = Math.max(0, Math.min(1, t));
+    }
+
+    current.accent = lerpColor(a.accent, b.accent, t);
+    current.bg1 = lerpColor(a.bg1, b.bg1, t);
+    current.bg2 = lerpColor(a.bg2, b.bg2, t);
+
+    root.style.setProperty('--accent', current.accent.join(','));
+    root.style.setProperty('--bg-1', current.bg1.join(','));
+    root.style.setProperty('--bg-2', current.bg2.join(','));
+  }
+
+  var ticking = false;
+  window.addEventListener('scroll', function(){
+    if(!ticking){
+      window.requestAnimationFrame(function(){ updateColors(); ticking = false; });
+      ticking = true;
+    }
+  });
+  updateColors();
+
+  // ---- 스크롤 리빌 ----
+  var revealTargets = document.querySelectorAll('.chapter-inner, .flow-inner, .closing-inner');
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){ entry.target.classList.add('in-view'); }
+    });
+  }, { threshold: 0.18 });
+  revealTargets.forEach(function(t){ io.observe(t); });
+
+  // ---- 캔버스 파티클 (은은한 빛 입자) ----
+  var canvas = document.getElementById('bgcanvas');
+  var ctx = canvas.getContext('2d');
+  var w, h, particles = [];
+  var PCOUNT = 46;
+
+  function resize(){
+    w = canvas.width = window.innerWidth;
+    h = canvas.height = document.documentElement.scrollHeight;
+  }
+  window.addEventListener('resize', resize);
+  resize();
+
+  function initParticles(){
+    particles = [];
+    for(var i=0;i<PCOUNT;i++){
+      particles.push({
+        x: Math.random()*w,
+        y: Math.random()*h,
+        r: Math.random()*1.6 + 0.4,
+        speed: Math.random()*0.25 + 0.05,
+        drift: (Math.random()-0.5)*0.15,
+        phase: Math.random()*Math.PI*2
+      });
+    }
+  }
+  initParticles();
+  window.addEventListener('resize', function(){ initParticles(); });
+
+  var t0 = 0;
+  function animate(){
+    t0 += 0.01;
+    ctx.clearRect(0,0,w,h);
+    var acc = current.accent;
+    particles.forEach(function(p){
+      p.y -= p.speed;
+      p.x += p.drift + Math.sin(t0 + p.phase)*0.1;
+      if(p.y < -10){ p.y = h + 10; p.x = Math.random()*w; }
+      var flicker = 0.35 + 0.35*Math.sin(t0*2 + p.phase);
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI*2);
+      ctx.fillStyle = 'rgba(' + acc[0] + ',' + acc[1] + ',' + acc[2] + ',' + flicker*0.55 + ')';
+      ctx.fill();
+    });
+    requestAnimationFrame(animate);
+  }
+  animate();
+
+  window.addEventListener('load', function(){ setTimeout(resize, 300); });
+})();
+</script>
+</body>
+</html>

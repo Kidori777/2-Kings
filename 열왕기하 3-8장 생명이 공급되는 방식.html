@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>열왕기하 3-8장 | 생명이 공급되는 방식</title>
+<meta name="description" content="열왕기하 3-8장 성경공부: 물 없는 광야에서 시작해 기름과 생명, 나아만의 치유, 불병거, 기근의 회복, 그리고 다윗을 생각하신 언약의 신실하심으로 이어지는 하나님의 생명 공급의 경륜">
+<meta property="og:title" content="열왕기하 3-8장 | 생명이 공급되는 방식">
+<meta property="og:description" content="왕들의 실패와 사람의 결핍 속에서, 하나님이 끊임없이 생명을 채우시고 약속을 지키시는 경륜을 따라가는 성경공부 시리즈">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --serif: 'Noto Serif KR', serif;
+    --sans: 'Noto Sans KR', sans-serif;
+  }
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    font-family: var(--sans);
+    background:#211B2E;
+    color:#EDEAF2;
+    overflow-x:hidden;
+    line-height:1.9;
+  }
+  section{ position:relative; padding:0; }
+  .wrap{
+    max-width:720px;
+    margin:0 auto;
+    padding:0 28px;
+    position:relative;
+    z-index:2;
+  }
+  @media (max-width:600px){ .wrap{ padding:0 20px; } }
+
+  h1,h2,h3,.quote{ font-family: var(--serif); }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    background: radial-gradient(ellipse at 50% 30%, #2E2540 0%, #1A1524 70%, #120E1A 100%);
+    padding:80px 24px;
+  }
+  #hero-canvas{ position:absolute; inset:0; width:100%; height:100%; opacity:.55; }
+  .hero-eyebrow{
+    font-size:.95rem; letter-spacing:.05em; color:#9A8FBF; margin-bottom:18px; font-family:var(--sans); font-weight:300;
+  }
+  .hero h1{
+    font-size:clamp(2.2rem,6vw,3.6rem);
+    font-weight:600;
+    line-height:1.35;
+    color:#F3EFFA;
+    margin-bottom:22px;
+  }
+  .hero p.sub{
+    font-family:var(--sans);
+    font-size:1.05rem;
+    color:#C6BEDD;
+    max-width:520px;
+    font-weight:300;
+    letter-spacing:.01em;
+  }
+  .hero .range{
+    margin-top:44px;
+    font-family:var(--sans);
+    font-size:.85rem;
+    color:#79709A;
+    display:flex; gap:14px; flex-wrap:wrap; justify-content:center;
+  }
+  .hero .range span{ padding:6px 14px; border:1px solid #46395E; border-radius:100px; }
+
+  /* ---------- SHARED CHAPTER BLOCKS ---------- */
+  .chapter{ padding:110px 0 100px; position:relative; }
+  .chapter-label{
+    font-size:.9rem; color:var(--label-color,#B7ADD1); font-weight:400; margin-bottom:14px; letter-spacing:.02em;
+  }
+  .chapter h2{
+    font-size:clamp(1.7rem,4.4vw,2.5rem);
+    font-weight:600;
+    line-height:1.45;
+    margin-bottom:28px;
+    color:var(--head-color,#F3EFFA);
+  }
+  .lede{
+    font-size:1.05rem;
+    color:var(--lede-color,#D9D2EB);
+    font-weight:300;
+    max-width:600px;
+    margin-bottom:56px;
+  }
+  .quote-block{
+    border-left:2px solid var(--accent,#C9A65C);
+    padding:6px 0 6px 26px;
+    margin:44px 0;
+  }
+  .quote-block .quote{
+    font-size:1.18rem;
+    line-height:1.85;
+    color:var(--quote-color,#FBF9FF);
+    font-weight:500;
+  }
+  .quote-block .cite{
+    display:block;
+    margin-top:10px;
+    font-family:var(--sans);
+    font-size:.85rem;
+    color:var(--accent,#C9A65C);
+    font-weight:400;
+  }
+  .body-text{
+    font-size:1rem;
+    color:var(--body-color,#D9D2EB);
+    font-weight:300;
+    margin-bottom:30px;
+  }
+  .body-text strong{ font-weight:700; color:var(--strong-color,#F3EFFA); }
+  .divider{
+    width:44px; height:1px; background:var(--accent,#C9A65C); opacity:.6; margin:56px 0;
+  }
+  .reveal{ opacity:0; transform:translateY(22px); transition:opacity .9s ease, transform .9s ease; }
+  .reveal.in{ opacity:1; transform:translateY(0); }
+
+  /* ---------- SECTION 1 : 3장 (결핍 → 물) ---------- */
+  .sec-drought{
+    background:linear-gradient(180deg,#1A1524 0%,#3C3222 55%,#4A3A20 100%);
+  }
+  .sec-water{
+    background:linear-gradient(180deg,#4A3A20 0%,#1E3A42 55%,#123338 100%);
+  }
+  #water-canvas{ position:absolute; inset:0; width:100%; height:100%; opacity:.35; pointer-events:none; }
+
+  /* ---------- SECTION 2 : 4장 (기름 → 생명 → 떡) ---------- */
+  .sec-oil{ background:linear-gradient(180deg,#123338 0%,#3F2E14 55%,#4E3712 100%); }
+  .sec-life{ background:linear-gradient(180deg,#4E3712 0%,#2E1F3A 55%,#241A33 100%); }
+  .sec-bread{ background:linear-gradient(180deg,#241A33 0%,#1B3327 55%,#173023 100%); }
+  #oil-canvas{ position:absolute; inset:0; width:100%; height:100%; opacity:.45; pointer-events:none; }
+
+  /* ---------- SECTION 3 : 5장 (나아만 정결 - 밝은 대비) ---------- */
+  .sec-clean{
+    background:linear-gradient(180deg,#173023 0%,#E9F3F1 22%,#EFF6F4 100%);
+  }
+  .sec-clean .chapter-label{ color:#3D8F7F; }
+  .sec-clean h2{ color:#122522; }
+  .sec-clean .lede{ color:#2C4A45; }
+  .sec-clean .body-text{ color:#2C4A45; }
+  .sec-clean .body-text strong{ color:#0E211D; }
+  .sec-clean .quote-block{ border-left-color:#2E8E7C; }
+  .sec-clean .quote-block .quote{ color:#0E211D; }
+  .sec-clean .quote-block .cite{ color:#2E8E7C; }
+  .sec-clean .divider{ background:#2E8E7C; }
+
+  .sec-ash{ background:linear-gradient(180deg,#EFF6F4 0%,#302A26 40%,#231E1B 100%); }
+
+  /* ---------- SECTION 4 : 6-7장 (보이지 않는 세계 → 기근 → 회복) ---------- */
+  .sec-unseen{ background:linear-gradient(180deg,#231E1B 0%,#0D1B3E 55%,#0A1633 100%); }
+  #star-canvas{ position:absolute; inset:0; width:100%; height:100%; opacity:.55; pointer-events:none; }
+  .sec-unseen .chapter-label{ color:#8FA3D9; }
+  .sec-unseen h2{ color:#EFF1FB; }
+  .sec-unseen .lede,.sec-unseen .body-text{ color:#C4CBEB; }
+  .sec-unseen .quote-block{ border-left-color:#E8C468; }
+  .sec-unseen .quote-block .quote{ color:#FBF7EA; }
+  .sec-unseen .quote-block .cite{ color:#E8C468; }
+  .sec-unseen .divider{ background:#E8C468; }
+
+  .sec-famine{ background:linear-gradient(180deg,#0A1633 0%,#3A2E24 55%,#241C16 100%); }
+  .sec-restore{ background:linear-gradient(180deg,#241C16 0%,#213A28 55%,#1B3323 100%); }
+
+  /* ---------- SECTION 5 : 8장 (귀환·회복 → 눈물·심판 예고 → 언약의 신실함) ---------- */
+  .sec-return{ background:linear-gradient(180deg,#1B3323 0%,#3E3016 55%,#4A3618 100%); }
+  .sec-return .chapter-label{ color:#E8C27A; }
+  .sec-return .quote-block{ --accent:#E8C27A; }
+  .sec-lament{ background:linear-gradient(180deg,#4A3618 0%,#3A1620 55%,#26101A 100%); }
+  .sec-lament .chapter-label{ color:#D9968F; }
+  .sec-lament h2{ color:#F2E4E2; }
+  .sec-lament .body-text{ color:#E0CAC7; }
+  .sec-lament .body-text strong{ color:#F6EAE8; }
+  .sec-lament .quote-block{ border-left-color:#C97B7B; }
+  .sec-lament .quote-block .quote{ color:#F6EAE8; }
+  .sec-lament .quote-block .cite{ color:#D9968F; }
+  .sec-covenant{ background:linear-gradient(180deg,#26101A 0%,#3A2A12 55%,#3E2E14 100%); }
+  .sec-covenant .chapter-label{ color:#D9B563; }
+  .sec-covenant h2{ color:#F5EAD0; }
+  .sec-covenant .body-text{ color:#E4D6B0; }
+  .sec-covenant .body-text strong{ color:#F5EAD0; }
+  .sec-covenant .quote-block{ border-left-color:#D9B563; }
+  .sec-covenant .quote-block .quote{ color:#F5EAD0; }
+  .sec-covenant .quote-block .cite{ color:#D9B563; }
+
+  /* ---------- CONCLUSION ---------- */
+  .sec-conclude{
+    background:linear-gradient(180deg,#3E2E14 0%,#F3ECD8 30%,#F6EFDD 100%);
+    padding-bottom:140px;
+  }
+  .sec-conclude .chapter-label{ color:#A98A3C; }
+  .sec-conclude h2{ color:#1E1608; }
+  .sec-conclude .lede,.sec-conclude .body-text{ color:#3A2E14; }
+  .sec-conclude .quote-block{ border-left-color:#A98A3C; }
+  .sec-conclude .quote-block .quote{ color:#1E1608; }
+  .sec-conclude .quote-block .cite{ color:#A98A3C; }
+  .sec-conclude .divider{ background:#A98A3C; }
+  .conclude-core{
+    text-align:center;
+    margin-top:20px;
+  }
+  .conclude-core .line{
+    font-family:var(--serif);
+    font-size:clamp(1.15rem,3vw,1.5rem);
+    color:#1E1608;
+    font-weight:600;
+    margin:14px 0;
+  }
+  .conclude-final{
+    margin-top:52px;
+    text-align:center;
+    font-family:var(--serif);
+    font-size:clamp(1.3rem,3.4vw,1.7rem);
+    font-weight:700;
+    color:#8A5A18;
+  }
+
+  footer{
+    background:#F6EFDD; color:#5C4A24; text-align:center; padding:40px 24px 60px; font-size:.82rem; font-weight:300;
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <canvas id="hero-canvas"></canvas>
+  <div class="wrap">
+    <p class="hero-eyebrow">열왕기하 성경공부 · 두 번째 이야기</p>
+    <h1 class="reveal in">생명이<br>공급되는 방식</h1>
+    <p class="sub">물 없는 광야, 기름 한 병, 나병 든 용사, 불말과 불병거, 굶주린 성읍, 그리고 다윗을 생각하신 언약 —<br>겉으로는 왕국의 역사이지만, 그 속에서 하나님은 쉬지 않고 생명을 채우고 약속을 지키고 계셨습니다.</p>
+    <div class="range">
+      <span>열왕기하 3장</span><span>4장</span><span>5장</span><span>6장</span><span>7장</span><span>8장</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3장 : 결핍 ============ -->
+<section class="chapter sec-drought">
+  <div class="wrap">
+    <p class="chapter-label reveal">열왕기하 3장 · 물이 없는 광야</p>
+    <h2 class="reveal">통치는 바뀌어도<br>사람은 근본에서 벗어나지 못했다</h2>
+    <p class="lede reveal">유다 왕 여호사밧 제십팔 년, 아합의 아들 여호람이 이스라엘을 다스리기 시작합니다. 사람의 왕은 바뀌었지만, 하나님은 여전히 그 자리에서 역사를 이끌고 계셨습니다.</p>
+
+    <div class="quote-block reveal">
+      <p class="quote">“유다 왕 여호사밧 제십팔 년에, 아합의 아들 여호람이 사마리아에서 이스라엘을 다스리기 시작하여 십이 년 동안 다스렸다.”</p>
+      <span class="cite">열왕기하 3:1</span>
+    </div>
+    <p class="body-text reveal">이 말씀은 단순한 왕의 등장이 아니라, 하나님께서 여전히 그분의 백성 위에 <strong>통치의 손을 놓지 않으셨다는 사실</strong>을 드러냅니다. 사람의 왕이 바뀌어도, 보이지 않는 자리에서는 하나님께서 역사를 이끌고 계십니다.</p>
+
+    <div class="quote-block reveal">
+      <p class="quote">“여호람은 여호와께서 보시기에 악한 짓을 하였으나…”</p>
+      <span class="cite">열왕기하 3:2</span>
+    </div>
+    <p class="body-text reveal">그는 이전보다 조금 나아 보였지만, 여전히 근본에서는 벗어나지 못했습니다. 이는 사람의 개선이 하나님의 경륜을 이루기에 충분하지 않음을 보여 줍니다. 하나님께서 원하시는 것은 단순한 외적 개혁이 아니라, <strong>그분 자신이 사람 안으로 들어와 중심이 되는 것</strong>입니다.</p>
+
+    <div class="divider reveal"></div>
+
+    <p class="body-text reveal">이러한 상태 가운데 사건이 시작됩니다. 모압이 반기를 들고, 세 왕이 연합하여 전쟁에 나섭니다. 그러나 길을 돌아 나간 광야에서 그들은 물이 없어 막히게 됩니다.</p>
+    <div class="quote-block reveal">
+      <p class="quote">“군대와 뒤따르는 짐승들을 먹일 물이 없었다.”</p>
+      <span class="cite">열왕기하 3:9</span>
+    </div>
+    <p class="body-text reveal">사람의 계획은 충분해 보였으나, <strong>생명의 공급이 없는 상태</strong>였습니다. 이것은 성경 전체에서 반복되는 그림입니다. 사람이 하나님 없이 움직일 때, 결국 생명의 근원이 끊어진 자리로 인도됩니다.</p>
+  </div>
+</section>
+
+<!-- ============ 3장 : 물 ============ -->
+<section class="chapter sec-water">
+  <canvas id="water-canvas"></canvas>
+  <div class="wrap">
+    <p class="chapter-label reveal" style="color:#8FD6D0;">열왕기하 3장 · 도랑을 파라</p>
+    <h2 class="reveal">보이는 원인 없이<br>결과를 이루시는 하나님</h2>
+
+    <p class="body-text reveal">그때 여호사밧이 묻습니다.</p>
+    <div class="quote-block reveal" style="--accent:#6FCFC0;">
+      <p class="quote">“여기에 여호와께 문의해 줄 만한 여호와의 신언자가 없습니까?”</p>
+      <span class="cite">열왕기하 3:11</span>
+    </div>
+    <p class="body-text reveal">이 질문은 단순한 해결책을 찾는 질문이 아니라, <strong>사람의 길에서 하나님의 길로 방향을 돌리는 전환점</strong>입니다. 그리고 엘리사가 등장합니다. 그는 왕을 보지 않고, 오직 하나님 앞에 서 있는 사람입니다.</p>
+
+    <p class="body-text reveal">엘리사는 말합니다.</p>
+    <div class="quote-block reveal" style="--accent:#6FCFC0;">
+      <p class="quote">“이 골짜기에 도랑을 파되…”</p>
+      <span class="cite">열왕기하 3:16</span>
+    </div>
+    <p class="body-text reveal">비도 없고 바람도 없지만, 도랑을 파라고 하십니다. 이것은 하나님께서 일하시는 방식입니다. <strong>사람이 이해할 수 있는 방식이 아니라, 믿음으로 준비하게 하시는 방식</strong>입니다.</p>
+
+    <div class="quote-block reveal" style="--accent:#6FCFC0;">
+      <p class="quote">“너희들이 바람이나 비를 보지는 못하겠지만… 물이 가득 차리라.”</p>
+      <span class="cite">열왕기하 3:17</span>
+    </div>
+    <p class="body-text reveal">하나님은 보이는 원인이 없이 결과를 이루십니다. 이것은 단순한 기적이 아니라, 하나님 자신이 <strong>보이지 않는 생명의 근원</strong>이심을 계시하는 것입니다. 결국 물이 흘러오고, 전쟁은 승리로 이어집니다. 그러나 이야기의 중심은 전쟁이 아니라, 생명이 공급되는 방식입니다.</p>
+  </div>
+</section>
+
+<!-- ============ 4장 : 기름 ============ -->
+<section class="chapter sec-oil">
+  <canvas id="oil-canvas"></canvas>
+  <div class="wrap">
+    <p class="chapter-label reveal" style="color:#E8C27A;">열왕기하 4장 · 기름 한 병</p>
+    <h2 class="reveal">받는 그릇의 수만큼<br>채워지는 공급</h2>
+
+    <p class="body-text reveal">이 흐름은 4장으로 이어지며 더 깊어집니다. 한 여인이 외칩니다.</p>
+    <div class="quote-block reveal" style="--accent:#E8A94A;">
+      <p class="quote">“이 종의 집에는 기름 한 병 외에 아무것도 없습니다.”</p>
+      <span class="cite">열왕기하 4:2</span>
+    </div>
+    <p class="body-text reveal">아무것도 없다고 말하지만, 하나님은 “한 병의 기름”을 보십니다. 이것은 사람 안에 남아 있는 <strong>하나님의 생명의 씨</strong>를 가리킵니다.</p>
+
+    <p class="body-text reveal">엘리사는 말합니다.</p>
+    <div class="quote-block reveal" style="--accent:#E8A94A;">
+      <p class="quote">“빈 그릇을 빌려 오되, 몇 개만 빌려 와서는 안 됩니다.”</p>
+      <span class="cite">열왕기하 4:3</span>
+    </div>
+    <p class="body-text reveal">그릇은 사람의 <strong>열림과 수용의 정도</strong>를 의미합니다. 기름은 넘치도록 준비되어 있지만, 채워지는 것은 그릇의 수에 달려 있습니다.</p>
+
+    <div class="quote-block reveal" style="--accent:#E8A94A;">
+      <p class="quote">“그릇들이 다 채워지자… 기름이 멈추었다.”</p>
+      <span class="cite">열왕기하 4:6</span>
+    </div>
+    <p class="body-text reveal">하나님의 공급이 부족해서 멈춘 것이 아니라, <strong>받는 쪽이 멈추었기 때문에 멈춘 것</strong>입니다. 여기서 하나님의 경륜이 드러납니다. 하나님은 넘치시는 분이지만, 그분의 목적은 사람 안에 그분 자신을 채우는 것입니다.</p>
+  </div>
+</section>
+
+<!-- ============ 4장 : 죽음에서 생명 ============ -->
+<section class="chapter sec-life">
+  <div class="wrap">
+    <p class="chapter-label reveal" style="color:#D9A6C2;">열왕기하 4장 · 죽음을 통과한 생명</p>
+    <h2 class="reveal">일곱 번의 재채기,<br>다시 열린 눈</h2>
+
+    <p class="body-text reveal">이어 수넴 여인의 이야기가 나옵니다. 하나님을 위하여 처소를 마련한 여인에게 생명이 주어지고, 그 생명이 죽었다가 다시 살아납니다.</p>
+    <div class="quote-block reveal" style="--accent:#D9A6C2;">
+      <p class="quote">“소년이 일곱 번 재채기를 하더니 눈을 떴다.”</p>
+      <span class="cite">열왕기하 4:35</span>
+    </div>
+    <p class="body-text reveal">이 장면은 단순한 기적이 아니라, 하나님께서 <strong>죽음을 통과하여 생명을 회복하시는 원리</strong>를 보여 줍니다. 이것은 훗날 그리스도의 죽음과 부활로 완성될 그림입니다.</p>
+
+    <div class="divider reveal" style="background:#D9A6C2;"></div>
+
+    <p class="body-text reveal">또한 독이 있는 죽이 정결하게 되고, 적은 떡이 많은 사람을 먹입니다.</p>
+    <div class="quote-block reveal" style="--accent:#D9A6C2;">
+      <p class="quote">“그들이 먹고도 얼마가 남았다.”</p>
+      <span class="cite">열왕기하 4:44</span>
+    </div>
+    <p class="body-text reveal">하나님은 항상 <strong>생명을 공급하시는 분</strong>이며, 그 공급은 사람의 계산을 넘습니다.</p>
+  </div>
+</section>
+
+<!-- ============ 5장 : 정결 (밝은 대비) ============ -->
+<section class="chapter sec-clean">
+  <div class="wrap">
+    <p class="chapter-label reveal">열왕기하 5장 · 나아만의 정결</p>
+    <h2 class="reveal">겉은 완전해 보여도<br>안에는 죽음의 표징이 있다</h2>
+    <p class="lede reveal">5장에서는 이 흐름이 이방인에게까지 확장됩니다.</p>
+
+    <div class="quote-block reveal">
+      <p class="quote">“그 사람은 용사였으나 나병 환자였다.”</p>
+      <span class="cite">열왕기하 5:1</span>
+    </div>
+    <p class="body-text reveal">겉으로는 완전해 보이나, 안에는 죽음의 표징이 있습니다. 이것이 사람의 상태입니다. 나아만은 큰 것을 기대했지만, 하나님은 단순한 길을 제시하십니다.</p>
+
+    <div class="quote-block reveal">
+      <p class="quote">“요단강에서 일곱 번 씻으십시오.”</p>
+      <span class="cite">열왕기하 5:10</span>
+    </div>
+    <p class="body-text reveal">이것은 사람이 자신의 높음을 내려놓고 <strong>죽음의 물 속으로 들어가는 것</strong>, 곧 자신을 부인하는 길입니다.</p>
+
+    <div class="quote-block reveal">
+      <p class="quote">“그의 살이 어린 소년의 살처럼 회복되어 깨끗하게 되었다.”</p>
+      <span class="cite">열왕기하 5:14</span>
+    </div>
+    <p class="body-text reveal">하나님은 단순히 병을 고치신 것이 아니라, <strong>새로운 상태로 회복시키십니다</strong>. 이것은 구원의 그림입니다.</p>
+  </div>
+</section>
+
+<!-- ============ 5장 : 게하시 (어둠으로 복귀) ============ -->
+<section class="chapter sec-ash">
+  <div class="wrap">
+    <p class="chapter-label reveal" style="color:#B0A28C;">열왕기하 5장 · 게하시의 탐욕</p>
+    <h2 class="reveal" style="color:#F0EAE0;">능력의 곁에 있어도<br>안에서는 다른 것을 구했다</h2>
+    <p class="body-text reveal" style="color:#C9C0AE;">그러나 동시에 게하시의 모습이 나타납니다. 그는 외적인 사역 곁에 있으면서도, 안에서는 다른 것을 추구합니다. 결국</p>
+    <div class="quote-block reveal" style="--accent:#B0A28C;">
+      <p class="quote" style="color:#F0EAE0;">“나아만의 나병이 자네와 자네의 씨에게서 영원토록 떠나지 않을 것이라.”</p>
+      <span class="cite">열왕기하 5:27</span>
+    </div>
+    <p class="body-text reveal" style="color:#C9C0AE;">하나님의 경륜은 단순한 능력의 문제가 아니라, <strong style="color:#F0EAE0;">사람의 내적 상태와 관계된 문제</strong>임이 드러납니다.</p>
+  </div>
+</section>
+
+<!-- ============ 6장 : 보이지 않는 세계 ============ -->
+<section class="chapter sec-unseen">
+  <canvas id="star-canvas"></canvas>
+  <div class="wrap">
+    <p class="chapter-label reveal">열왕기하 6장 · 불말과 불병거</p>
+    <h2 class="reveal">눈에 보이는 역사 뒤에는<br>보이지 않는 영적 실재가 있다</h2>
+    <p class="lede reveal">6장에서는 더 깊은 장면이 펼쳐집니다. 보이지 않는 세계가 열립니다.</p>
+
+    <div class="quote-block reveal">
+      <p class="quote">“우리 편이 저들 편보다 많네.”</p>
+      <span class="cite">열왕기하 6:16</span>
+    </div>
+    <div class="quote-block reveal">
+      <p class="quote">“산에 가득한 말들과 불 병거들이 엘리사를 둘러싸고 있는 것을 보았다.”</p>
+      <span class="cite">열왕기하 6:17</span>
+    </div>
+    <p class="body-text reveal">하나님의 경륜은 눈에 보이는 역사 뒤에 있는 <strong>보이지 않는 영적 실재</strong> 속에서 진행됩니다.</p>
+
+    <p class="body-text reveal">또한 원수를 죽이지 않고 먹이고 돌려보냅니다. 이는 하나님께서 단순히 심판하시는 분이 아니라, <strong>생명을 통해 회복하시고 다루시는 분</strong>임을 보여 줍니다.</p>
+  </div>
+</section>
+
+<!-- ============ 6-7장 : 기근 ============ -->
+<section class="chapter sec-famine">
+  <div class="wrap">
+    <p class="chapter-label reveal" style="color:#C7A98C;">열왕기하 6-7장 · 사마리아의 기근</p>
+    <h2 class="reveal">절망의 끝에서<br>선포되는 말씀</h2>
+    <p class="body-text reveal">그러나 사마리아가 포위될 때, 극단적인 기근이 옵니다. 사람은 절망의 끝에 이릅니다. 그때 말씀이 선포됩니다.</p>
+    <div class="quote-block reveal" style="--accent:#C7A98C;">
+      <p class="quote">“내일 이맘때… 값이 회복될 것이다.”</p>
+      <span class="cite">열왕기하 7:1</span>
+    </div>
+    <p class="body-text reveal">이 말씀은 불가능해 보이지만, 하나님은 보이지 않는 방식으로 이미 일을 시작하십니다.</p>
+  </div>
+</section>
+
+<!-- ============ 7장 : 회복 ============ -->
+<section class="chapter sec-restore">
+  <div class="wrap">
+    <p class="chapter-label reveal" style="color:#8FCB9E;">열왕기하 7장 · 회복된 말씀</p>
+    <h2 class="reveal">사람이 싸우지 않았지만<br>하나님이 이미 이기셨다</h2>
+    <div class="quote-block reveal" style="--accent:#7FBF8F;">
+      <p class="quote">“주님께서 시리아 사람들의 진영에… 큰 군대 소리가 들리게 하시므로”</p>
+      <span class="cite">열왕기하 7:6</span>
+    </div>
+    <p class="body-text reveal">사람이 싸우지 않았지만, 하나님께서 이미 승리를 이루셨습니다. 결국</p>
+    <div class="quote-block reveal" style="--accent:#7FBF8F;">
+      <p class="quote">“여호와의 말씀대로…”</p>
+      <span class="cite">열왕기하 7:16</span>
+    </div>
+    <p class="body-text reveal">말씀은 현실이 됩니다.</p>
+  </div>
+</section>
+
+<!-- ============ 8장 : 수넴 여인의 귀환 ============ -->
+<section class="chapter sec-return">
+  <div class="wrap">
+    <p class="chapter-label reveal">열왕기하 8장 · 시간을 엮으시는 하나님</p>
+    <h2 class="reveal">과거의 생명 역사가<br>현재의 순간과 맞물리다</h2>
+    <p class="lede reveal">7장에서 하나님의 말씀은 현실이 됩니다. 사람이 아무것도 하지 않았지만, 하나님께서 이미 보이지 않는 곳에서 일을 이루셨고, 말씀은 그대로 성취됩니다. 그러나 이 성취는 단순한 기적의 완결이 아니라, 하나님의 통치가 계속 진행되고 있음을 보여 주는 한 장면일 뿐입니다. 그 흐름 속에서 8장이 시작됩니다.</p>
+
+    <div class="quote-block reveal">
+      <p class="quote">“그대와 그대의 집안 식구는 일어나… 여호와께서 기근을 불러들이셨으므로 이 땅에 칠 년 동안 기근이 들 것입니다.”</p>
+      <span class="cite">열왕기하 8:1</span>
+    </div>
+    <p class="body-text reveal">여기서 우리는 한 걸음 더 깊은 사실을 보게 됩니다. 앞에서는 하나님께서 기근을 해결하셨다면, 여기서는 기근 자체도 하나님께서 부르신 것으로 나타납니다. 이것은 하나님이 단지 문제를 해결하시는 분이 아니라, <strong>환경 자체를 주관하시며 사람을 이끄시는 분</strong>이심을 드러냅니다.</p>
+
+    <p class="body-text reveal">수넴 여인은 이전에 생명을 회복받았던 사람입니다. 이제는 그 생명을 가진 상태에서, 하나님의 말씀에 따라 떠납니다. 그리고 시간이 흐른 뒤 돌아옵니다. 놀랍게도 그녀가 돌아오는 순간, 왕 앞에서는 이런 이야기가 진행되고 있었습니다.</p>
+    <div class="quote-block reveal">
+      <p class="quote">“엘리사가 죽은 소년을 어떻게 살렸는지…”</p>
+      <span class="cite">열왕기하 8:5</span>
+    </div>
+    <p class="body-text reveal">과거의 생명 역사가 현재의 상황과 정확히 맞물립니다. 이것은 우연이 아니라, 하나님께서 <strong>시간까지도 엮어 가시며 생명의 역사를 보존하고 회복하시는 방식</strong>입니다. 결국 그 여인은 모든 것을 되찾습니다.</p>
+
+    <div class="divider reveal"></div>
+
+    <p class="body-text reveal">여기서 하나님의 의도가 드러납니다. 그분은 단지 기적을 행하시는 분이 아니라, <strong>생명을 받은 사람의 삶 전체를 책임지시는 분</strong>입니다.</p>
+  </div>
+</section>
+
+<!-- ============ 8장 : 엘리사의 눈물 ============ -->
+<section class="chapter sec-lament">
+  <div class="wrap">
+    <p class="chapter-label reveal">열왕기하 8장 · 엘리사의 눈물</p>
+    <h2 class="reveal">겉은 회복처럼 보여도<br>이미 죽음이 예정되어 있었다</h2>
+    <p class="lede reveal">이어지는 장면은 더 깊고 어두운 방향으로 나아갑니다.</p>
+
+    <div class="quote-block reveal">
+      <p class="quote">“왕께서 분명 회복되실 것입니다. 그러나 그가 분명 죽으리라는 것을 여호와께서 나에게 보여 주셨습니다.”</p>
+      <span class="cite">열왕기하 8:10</span>
+    </div>
+    <p class="body-text reveal">여기서 우리는 하나님의 통치의 또 다른 면을 봅니다. 겉으로는 회복처럼 보이지만, 실제로는 죽음이 예정되어 있습니다. 그리고 엘리사는 울기 시작합니다.</p>
+
+    <div class="quote-block reveal">
+      <p class="quote">“그대가 이스라엘 자손에게 저지를 악행을 내가 알기 때문입니다.”</p>
+      <span class="cite">열왕기하 8:12</span>
+    </div>
+    <p class="body-text reveal">하나님은 단지 미래를 아시는 분이 아니라, <strong>그 미래 속에 담긴 고통과 타락까지도 이미 보시고 느끼시는 분</strong>입니다.</p>
+
+    <p class="body-text reveal">하사엘은 자신이 그런 일을 할 사람이라고 생각하지 않지만, 결국 왕이 되고 그 길을 걷게 됩니다. 이 장면은 인간의 본질을 드러냅니다. 사람은 스스로를 알지 못하지만, 하나님은 사람 안에 있는 것까지 아십니다. 그리고 그 속에서도 여전히 그분의 경륜은 진행됩니다.</p>
+  </div>
+</section>
+
+<!-- ============ 8장 : 다윗을 생각하시어 ============ -->
+<section class="chapter sec-covenant">
+  <div class="wrap">
+    <p class="chapter-label reveal">열왕기하 8장 · 다윗을 생각하시어</p>
+    <h2 class="reveal">사람의 상태가 아니라<br>하나님의 약속에 근거한 지속성</h2>
+    <p class="lede reveal">마지막으로 유다 왕들의 이야기가 이어집니다.</p>
+
+    <div class="quote-block reveal">
+      <p class="quote">“그러나 여호와는 그분의 종 다윗을 생각하시어 유다를 멸망시키지 않으셨는데…”</p>
+      <span class="cite">열왕기하 8:19</span>
+    </div>
+    <p class="body-text reveal">여기서 모든 흐름이 하나로 모입니다. 왕들은 계속 실패합니다. 백성도 변하지 않습니다. 환경은 반복해서 무너집니다.</p>
+    <p class="body-text reveal">그럼에도 불구하고 하나님은 한 가지 때문에 멈추지 않으십니다. <strong>“다윗을 생각하시어”</strong> — 이것은 사람의 상태가 아니라, 하나님의 약속과 선택, 곧 그분의 경륜에 근거한 지속성입니다.</p>
+  </div>
+</section>
+
+<!-- ============ 결론 ============ -->
+<section class="chapter sec-conclude">
+  <div class="wrap">
+    <p class="chapter-label reveal">하나님의 경륜</p>
+    <h2 class="reveal">왕국은 무너져 가도<br>경륜은 조금도 흔들리지 않는다</h2>
+    <p class="lede reveal" style="color:#3A2E14;">이제 3장부터 8장까지의 흐름이 하나로 연결됩니다. 이 모든 이야기는 각각의 사건처럼 보이지만, 실제로는 한 방향을 향하고 있습니다.</p>
+
+    <div class="conclude-core">
+      <p class="line reveal">광야에서 물이 없던 자리에서 시작하여</p>
+      <p class="line reveal">빈 그릇에 기름이 채워지고,</p>
+      <p class="line reveal">죽은 아이가 살아나며,</p>
+      <p class="line reveal">나병이 정결해지고,</p>
+      <p class="line reveal">보이지 않는 군대가 드러나고,</p>
+      <p class="line reveal">기근 속에서 말씀이 성취되며,</p>
+      <p class="line reveal">시간과 역사 속에서 회복이 이루어지고,</p>
+      <p class="line reveal">심판과 타락 속에서도 약속은 유지됩니다.</p>
+    </div>
+
+    <div class="divider reveal" style="margin-left:auto;margin-right:auto;"></div>
+
+    <p class="body-text reveal" style="text-align:center;">하나님은 환경을 통해 사람을 비우시고, 말씀을 통해 길을 여시며, <strong>생명을 통해 회복하시고</strong>, 보이지 않는 영역에서 보호하시며, 시간을 통해 그분의 역사를 이루십니다.</p>
+    <p class="body-text reveal" style="text-align:center;">결국 이 모든 것은 단순한 역사 기록이 아니라, 하나님께서 사람 안에 그분의 생명을 공급하시고, 그 생명으로 사람을 변화시키며, 그 사람들을 통해 그분의 통치를 나타내시려는 <strong>경륜으로 수렴</strong>됩니다.</p>
+
+    <p class="conclude-final reveal">왕국은 무너져 가지만, 하나님의 경륜은 조금도 흔들리지 않습니다.<br>그리고 그 경륜은 결국 하나님과 사람이 하나 되는 그 목적을 향해<br>조용하지만 확실하게 흘러가고 있습니다.</p>
+  </div>
+</section>
+
+<footer>열왕기하 성경공부 시리즈 · 두 번째 이야기 (3-8장)</footer>
+
+<script>
+// scroll reveal
+const revealEls = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+},{ threshold:0.15 });
+revealEls.forEach(el=>io.observe(el));
+
+// hero canvas - slow drifting dust/light motes (represents the unseen realm quietly present from the start)
+(function(){
+  const c = document.getElementById('hero-canvas');
+  const ctx = c.getContext('2d');
+  let w,h,particles=[];
+  function resize(){
+    w = c.width = c.offsetWidth; h = c.height = c.offsetHeight;
+  }
+  function init(){
+    resize();
+    particles = Array.from({length:36}, ()=>({
+      x: Math.random()*w, y: Math.random()*h,
+      r: Math.random()*1.6+0.4,
+      s: Math.random()*0.25+0.05,
+      o: Math.random()*0.5+0.15
+    }));
+  }
+  function draw(){
+    ctx.clearRect(0,0,w,h);
+    particles.forEach(p=>{
+      p.y -= p.s;
+      if(p.y < -5) p.y = h+5;
+      ctx.beginPath();
+      ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+      ctx.fillStyle = `rgba(200,170,255,${p.o})`;
+      ctx.fill();
+    });
+    requestAnimationFrame(draw);
+  }
+  window.addEventListener('resize', resize);
+  init(); draw();
+})();
+
+// water canvas - rippling horizontal lines representing water filling the trench
+(function(){
+  const c = document.getElementById('water-canvas');
+  if(!c) return;
+  const ctx = c.getContext('2d');
+  let w,h,t=0;
+  function resize(){ w = c.width = c.offsetWidth; h = c.height = c.offsetHeight; }
+  function draw(){
+    ctx.clearRect(0,0,w,h);
+    for(let i=0;i<5;i++){
+      const yBase = h*0.55 + i*26;
+      ctx.beginPath();
+      for(let x=0;x<=w;x+=12){
+        const y = yBase + Math.sin((x*0.015)+(t*0.02)+i)*6;
+        if(x===0) ctx.moveTo(x,y); else ctx.lineTo(x,y);
+      }
+      ctx.strokeStyle = `rgba(111,207,192,${0.12 - i*0.015})`;
+      ctx.lineWidth = 1.4;
+      ctx.stroke();
+    }
+    t++;
+    requestAnimationFrame(draw);
+  }
+  window.addEventListener('resize', resize);
+  resize(); draw();
+})();
+
+// oil canvas - slow rising warm droplets (fullness / overflowing supply)
+(function(){
+  const c = document.getElementById('oil-canvas');
+  if(!c) return;
+  const ctx = c.getContext('2d');
+  let w,h,drops=[];
+  function resize(){ w = c.width = c.offsetWidth; h = c.height = c.offsetHeight; }
+  function init(){
+    resize();
+    drops = Array.from({length:22}, ()=>({
+      x: Math.random()*w, y: h+Math.random()*h,
+      r: Math.random()*2.2+1, s: Math.random()*0.35+0.1, o: Math.random()*0.35+0.15
+    }));
+  }
+  function draw(){
+    ctx.clearRect(0,0,w,h);
+    drops.forEach(d=>{
+      d.y -= d.s;
+      if(d.y < -10){ d.y = h+10; d.x = Math.random()*w; }
+      ctx.beginPath();
+      ctx.arc(d.x,d.y,d.r,0,Math.PI*2);
+      ctx.fillStyle = `rgba(232,169,74,${d.o})`;
+      ctx.fill();
+    });
+    requestAnimationFrame(draw);
+  }
+  window.addEventListener('resize', resize);
+  init(); draw();
+})();
+
+// star canvas - fixed starfield representing the hidden host surrounding Elisha
+(function(){
+  const c = document.getElementById('star-canvas');
+  if(!c) return;
+  const ctx = c.getContext('2d');
+  let w,h,stars=[];
+  function resize(){
+    w = c.width = c.offsetWidth; h = c.height = c.offsetHeight;
+    stars = Array.from({length:90}, ()=>({
+      x: Math.random()*w, y: Math.random()*h, r: Math.random()*1.3+0.3,
+      tw: Math.random()*Math.PI*2
+    }));
+  }
+  function draw(){
+    ctx.clearRect(0,0,w,h);
+    stars.forEach(s=>{
+      s.tw += 0.02;
+      const o = 0.35 + Math.sin(s.tw)*0.35;
+      ctx.beginPath();
+      ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
+      ctx.fillStyle = `rgba(232,196,104,${Math.max(0,o)})`;
+      ctx.fill();
+    });
+    requestAnimationFrame(draw);
+  }
+  window.addEventListener('resize', resize);
+  resize(); draw();
+})();
+</script>
+</body>
+</html>
